@@ -1,0 +1,50 @@
+{
+  "parser": "@typescript-eslint/parser",
+  "extends": [
+    "next/core-web-vitals",
+    // Additional Configuration
+    "plugin:@next/next/recommended",
+    "eslint:recommended",
+    "airbnb",
+    "plugin:@typescript-eslint/recommended",
+    "plugin:@typescript-eslint/eslint-recommended",
+    // prettier extends
+    "prettier"
+  ],
+  "plugins": ["prettier", "@typescript-eslint", "react"],
+  "globals": {
+    "React": "readonly"
+  },
+  "rules": {
+    "prettier/prettier": "error",
+    "func-names": "off",
+    "react/jsx-filename-extension": [2, { "extensions": [".jsx", ".tsx"] }],
+    "import/extensions": "off",
+    "jsx-a11y/anchor-is-valid": "off",
+    "array-element-newline": [
+      "error",
+      {
+        "ArrayExpression": "consistent",
+        "ArrayPattern": { "minItems": 3 }
+      }
+    ],
+    "no-param-reassign": [
+      "error",
+      { "props": true, "ignorePropertyModificationsFor": ["state"] }
+    ] /* Redux , state mutation */,
+    "react/require-default-props": [
+      0
+    ] /* Javascript requires default parameters*/,
+    "react/function-component-definition": [
+      2,
+      {
+        "namedComponents": [
+          "arrow-function",
+          "function-expression",
+          "function-declaration"
+        ],
+        "unnamedComponents": ["function-expression", "arrow-function"]
+      }
+    ]
+  }
+}
