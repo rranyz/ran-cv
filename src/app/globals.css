@@ -33,8 +33,171 @@
   box-sizing: border-box;
 }
 
-.hero {
-  background: center no-repeat url('/assets/img/hero-mountain.jpg');
+body {
+}
+
+li {
+  list-style-type: none;
+}
+
+section {
+  width: 1440px;
+  margin: 0 auto;
+  margin-bottom: 20px;
+}
+
+/* section h2 {
+  text-align: center;
+} */
+
+.container {
+  /* width: 1440px;
+  margin: 0 auto; */
+}
+
+.mainHeader {
+  display: flex;
+  padding: 20px 40px;
+  justify-content: space-between;
+  position: fixed;
+  width: 100%;
+  z-index: 100;
+
+  background: #343a40;
+  color: #fff;
+}
+
+.heroBanner {
+  /* background: center no-repeat url('/assets/img/hero-mountain.jpg'); */
   width: 100%;
   height: 500px;
+  /* text-align: left;
+  padding: 90px 0 50px 50px; */
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 90px 240px;
+}
+
+.heroGreet {
+  display: inline-block;
+}
+
+.heroImg {
+  -webkit-transform: scaleX(-1);
+  transform: scaleX(-1);
+}
+
+/** about me*/
+.info {
+  display: flex;
+  gap: 50px;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+/** what i do */
+.todoContainer {
+  display: flex;
+  gap: 20px;
+}
+
+.todoCard {
+  flex: 0 1 460px;
+}
+
+/** Skills */
+.skillContainer {
+  display: flex;
+  gap: 50px;
+}
+
+.wrap {
+  flex: 1 1 auto;
+}
+
+.skillMain {
+  display: flex;
+  gap: 20px;
+}
+
+.skillList {
+  flex: 1 1 300px;
+}
+
+.cafe24Logo {
+  display: inline-block;
+  margin-top: 75px;
+  margin-left: 111px;
+}
+
+/** experience */
+.timeline {
+  position: relative;
+  max-width: 1000px;
+  margin: 0 auto;
+  padding-bottom: 50px;
+}
+
+.timeline:before {
+  position: absolute;
+  content: '';
+  height: 100%;
+  width: 2px;
+  background: #00b7c7;
+  left: calc(50% - 1px);
+  z-index: -1px;
+}
+
+.timelineBlock {
+  display: flex;
+  gap: 10px;
+}
+
+.timeContent {
+  flex: 0 0 467px;
+}
+
+.timeIcon {
+  flex-basis: 45px;
+}
+
+/** resume */
+.resume {
+  text-align: center;
+}
+
+/** project */
+.projectWrap {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+
+.tech-list {
+  display: flex;
+  gap: 10px;
+}
+
+/** get in touch */
+.getInTouch {
+  text-align: center;
+}
+
+/*** footer */
+footer {
+  padding: 20px 40px;
+  text-align: center;
+  color: #fff;
+  background: #0c8599;
+}
+
+/** aside */
+.socialLinks {
+  position: fixed;
+  bottom: 100px;
+  left: 20px;
+  display: flex;
+  flex-direction: column;
 }
