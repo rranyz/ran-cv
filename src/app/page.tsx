@@ -7,42 +7,60 @@ import {
   UsersThree,
   Lightbulb,
   Code,
-  Briefcase
+  Briefcase,
+  IconProps,
+  FacebookLogo,
+  InstagramLogo,
+  GitlabLogo,
+  GithubLogo,
+  LinkedinLogo
 } from '@phosphor-icons/react'
 import { useMemo } from 'react'
 import Cafe24 from '@/components/svg/Cafe24'
 
 export default function Home() {
   const configIcons = useMemo(
-    () => ({
-      color: 'limegreen',
-      size: 32
-    }),
+    () =>
+      ({
+        weight: 'fill',
+        color: '#09090b',
+        size: 32
+      }) as IconProps,
     []
   )
   return (
     <>
       <header className="mainHeader">
         <p className="logo">Rannie</p>
-        <nav>
-          <Link href="#">About</Link>
-          <Link href="#">Passion</Link>
-          <Link href="#">Experience</Link>
-          <Link href="#">Work</Link>
-          <Link href="#">Contact</Link>
+        <nav className="navWrapper">
+          <Link className="navLink" href="#">
+            About
+          </Link>
+          <Link className="navLink" href="#">
+            Passion
+          </Link>
+          <Link className="navLink" href="#">
+            Experience
+          </Link>
+          <Link className="navLink" href="#">
+            Work
+          </Link>
+          <Link className="navLink" href="#">
+            Contact
+          </Link>
         </nav>
       </header>
       <main className="container">
         <section className="heroBanner">
           <div className="heroGreet">
-            <h1>Hi, I&apos;m Rannie Raymundo</h1>
+            <h1>Hi!, I&apos;m Rannie Raymundo</h1>
             <p>Web Developer, & Front-End Developer</p>
           </div>
           <Image
             className="heroImg"
-            src="/ran-cv/assets/img/hero-programming.png"
-            width={600}
-            height={450}
+            src="/assets/img/no-bg-hero.png"
+            width={1000}
+            height={700}
             alt="programming work from home"
           />
         </section>
@@ -50,7 +68,7 @@ export default function Home() {
         <section className="info">
           <div className="profilePicture">
             <Image
-              src="/ran-cv/assets/img/profile-dp.jpg"
+              src="/assets/img/profile-dp.jpg"
               width="300"
               height="450"
               alt="Profile Picture"
@@ -79,7 +97,7 @@ export default function Home() {
 
             <div className="todoContainer">
               <div className="todoCard">
-                <Lightbulb />
+                <Lightbulb className="todoIcon" />
                 <h3>Learn</h3>
                 <p>
                   Continuos Learning is the one of best way to improve myself.
@@ -87,7 +105,7 @@ export default function Home() {
                 </p>
               </div>
               <div className="todoCard">
-                <Code />
+                <Code className="todoIcon" />
                 <h3>Developement</h3>
                 <p>
                   Lorem ipsum dolor sit amet consectetur adipisicing elit. Et ea
@@ -97,7 +115,7 @@ export default function Home() {
                 </p>
               </div>
               <div className="todoCard">
-                <UsersThree />
+                <UsersThree className="todoIcon" />
                 <h3>Engagement</h3>
                 <p>
                   Lorem ipsum dolor sit amet consectetur adipisicing elit. Et ea
@@ -116,7 +134,7 @@ export default function Home() {
             </p>
             <div className="skillContainer">
               <div className="wrap">
-                <h3>SOME TECHNOLOGIES I&apos;VE WORKED WITH:</h3>
+                <h3>some technologies I&apos;ve worked with:</h3>
                 <div className="skillMain">
                   <div className="skillList">
                     <h4>languages</h4>
@@ -158,18 +176,18 @@ export default function Home() {
                 </div>
               </div>
               <div className="wrap">
-                <h3>happy to share where I&apos;ve worked</h3>
+                <h3>happy to share where I&apos;ve worked:</h3>
                 <Cafe24 className="cafe24Logo" />
               </div>
             </div>
           </section>
-          <section>
-            <h3>experience</h3>
+          <section className="exp">
+            <h2>experience</h2>
             <div className="timeline">
               <div className="timelineBlock">
                 <div className="timeContent">
-                  <h4>Web Developer</h4>
-                  <p>Cafe24 Philippines, Inc</p>
+                  <p className="timeTitle">Web Developer</p>
+                  <p className="subTitle">Cafe24 Philippines, Inc</p>
                   <p>
                     Applies and practices Agile Scrum methologies. Participate
                     to a daily scrum ceremonies and a team discussion. Develop
@@ -184,8 +202,8 @@ export default function Home() {
                 <p className="timeContent">July 2019 - December 2020</p>
                 <Briefcase className="timeContent timeIcon" />
                 <div className="timeContent">
-                  <h4>Junior Web Developer</h4>
-                  <p>Cafe24 Philippines, Inc</p>
+                  <p className="timeTitle">Junior Web Developer</p>
+                  <p className="subTitle">Cafe24 Philippines, Inc</p>
                   <p>
                     Convert all wireframes into reusable components for the web
                     pages. Documentation of technology exploration and outputs.
@@ -195,8 +213,8 @@ export default function Home() {
               </div>
               <div className="timelineBlock">
                 <div className="timeContent">
-                  <h4>Probationary</h4>
-                  <p>Cafe24 Philippines, Inc</p>
+                  <p className="timeTitle">Probationary</p>
+                  <p className="subTitle">Cafe24 Philippines, Inc</p>
                   <p>
                     Familiarized with companies&apos; IT methologies and
                     technologies. Develop a probationary projects using a 3rd
@@ -213,10 +231,10 @@ export default function Home() {
           <h3>View my full resume</h3>
           <button type="button">Download</button>
         </section>
-        <section>
-          <h3>Projects</h3>
+        <section className="project">
+          <h2>Projects</h2>
           <div className="projectWrap">
-            <div>
+            <div className="projectContent">
               <h4>Marketing Solution Platform MSP</h4>
               <p>
                 Provides e-commerce service such as product and advertisement
@@ -232,7 +250,7 @@ export default function Home() {
                 <li>useSWR</li>
               </ul>
             </div>
-            <div>
+            <div className="projectContent">
               <h4>Integrated Support System (ISS) </h4>
               <p>
                 Provides service for information about search correlation of the
@@ -248,7 +266,7 @@ export default function Home() {
                 <li>Vuex</li>
               </ul>
             </div>
-            <div>
+            <div className="projectContent">
               <h4>Cafe24 Marketing Center</h4>
               <p>
                 Provide service for Global Marketing Solution like product
@@ -261,7 +279,7 @@ export default function Home() {
                 <li>JavaScript</li>
               </ul>
             </div>
-            <div>
+            <div className="projectContent">
               <h4>Automated Project Preparation</h4>
               <p>
                 Provides a service for easy project management setup such as
@@ -292,6 +310,7 @@ export default function Home() {
             href="mailto:ranniemraymundo@gmail.com"
             target="_blank"
             rel="noreferrer"
+            className="btnAnchor"
           >
             Let&apos;s Talk ☺️
           </a>
@@ -301,64 +320,55 @@ export default function Home() {
         <p>Designed & Develop by</p>
         <p> Rannie Raymundo 2023</p>
       </footer>
-      <aside className="socialLinks">
-        <a
-          id="facebook"
-          href="http://google.com"
-          target="_blank"
-          rel="noreferrer"
-        >
-          Facebook
-        </a>
-        <a
-          id="facebook"
-          href="http://google.com"
-          target="_blank"
-          rel="noreferrer"
-        >
-          twitter
-        </a>
-        <a
-          id="facebook"
-          href="http://google.com"
-          target="_blank"
-          rel="noreferrer"
-        >
-          instagram
-        </a>
-        <a
-          id="facebook"
-          href="http://google.com"
-          target="_blank"
-          rel="noreferrer"
-        >
-          github
-        </a>
-        <a
-          id="facebook"
-          href="http://google.com"
-          target="_blank"
-          rel="noreferrer"
-        >
-          gitlab
-        </a>
-        <a
-          id="facebook"
-          href="http://google.com"
-          target="_blank"
-          rel="noreferrer"
-        >
-          link in
-        </a>
-        <a
-          id="facebook"
-          href="http://google.com"
-          target="_blank"
-          rel="noreferrer"
-        >
-          jobstreet
-        </a>
-      </aside>
+      <IconContext.Provider value={configIcons}>
+        <aside className="socialLinks">
+          <a
+            id="linkedin"
+            href="http://google.com"
+            target="_blank"
+            rel="noreferrer"
+            aria-label="linkedin"
+          >
+            <LinkedinLogo />
+          </a>
+          <a
+            id="github"
+            href="http://google.com"
+            target="_blank"
+            rel="noreferrer"
+            aria-label="github"
+          >
+            <GithubLogo />
+          </a>
+          <a
+            id="gitlab"
+            href="http://google.com"
+            target="_blank"
+            rel="noreferrer"
+            aria-label="gitlab"
+          >
+            <GitlabLogo />
+          </a>
+
+          <a
+            href="http://google.com"
+            target="_blank"
+            rel="noreferrer"
+            aria-label="facebook"
+          >
+            <FacebookLogo />
+          </a>
+          <a
+            id="instagram"
+            href="http://google.com"
+            target="_blank"
+            rel="noreferrer"
+            aria-label="instagram"
+          >
+            <InstagramLogo />
+          </a>
+        </aside>
+      </IconContext.Provider>
     </>
   )
 }
