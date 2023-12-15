@@ -113,7 +113,8 @@ h1 {
 }
 
 .heroBanner {
-  width: 100%;
+  width: 100vw;
+  height: 100vh;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -242,22 +243,32 @@ h1 {
 }
 
 /** experience */
+.cardDesc p {
+  font-size: 16px !important;
+}
+
+.timelineTitle {
+  color: #343a40 !important;
+}
+
 .exp {
   margin-bottom: 128px;
+  /* width: 100%; */
 }
 
 .exp h2 {
   text-transform: capitalize;
+  margin-bottom: 32px;
 }
 
 .timeline {
   position: relative;
-  max-width: 1000px;
+  max-width: 1200px;
   margin: 0 auto;
   padding-bottom: 50px;
 }
 
-.timeline:before {
+/* .timeline:before {
   position: absolute;
   content: '';
   height: 100%;
@@ -265,17 +276,37 @@ h1 {
   background: var(--main-color);
   left: calc(50% - 1px);
   z-index: -10px;
-}
+} */
 
 .timelineBlock {
   display: flex;
-  gap: 10px;
+  gap: 27.5px;
+  margin-bottom: 64px;
 }
 
 .timeContent {
-  flex: 0 0 467px;
+  flex: 0 0 550px;
   font-size: 18px;
   line-height: 1.6;
+  padding: 48px 32px;
+}
+
+.timeContentPrimary {
+  background: var(--main-color);
+  color: #d4d4d8;
+  position: relative;
+}
+
+.timeContentPrimary:hover::before {
+  content: '';
+  display: inline-block;
+  position: absolute;
+  width: 0;
+  height: 0;
+}
+
+.dateInfo {
+  text-transform: uppercase;
 }
 
 .timeTitle {
@@ -285,10 +316,14 @@ h1 {
 
 .subTitle {
   font-size: 16px;
+  margin-bottom: 24px;
 }
 
 .timeIcon {
-  flex-basis: 45px;
+  flex-basis: 145px;
+  padding: 0;
+  background: #fff;
+  margin-top: 48px;
 }
 
 /** resume */
@@ -308,7 +343,7 @@ h1 {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 20px;
-  width: 1200px;
+  width: 1300px;
   margin: 0 auto;
 }
 

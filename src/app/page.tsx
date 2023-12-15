@@ -1,5 +1,6 @@
 'use client'
 
+import 'react-vertical-timeline-component/style.min.css'
 import Image from 'next/image'
 import Link from 'next/link'
 import {
@@ -7,7 +8,6 @@ import {
   UsersThree,
   Lightbulb,
   Code,
-  Briefcase,
   IconProps,
   FacebookLogo,
   InstagramLogo,
@@ -17,6 +17,7 @@ import {
 } from '@phosphor-icons/react'
 import { useMemo } from 'react'
 import Cafe24 from '@/components/svg/Cafe24'
+import dynamic from 'next/dynamic'
 
 export default function Home() {
   const configIcons = useMemo(
@@ -28,6 +29,11 @@ export default function Home() {
       }) as IconProps,
     []
   )
+
+  /** Set serverside rendering to false */
+  const Chrono = dynamic(() => import('../components/Chrono/Chrono'), {
+    ssr: false
+  })
   return (
     <>
       <header className="mainHeader">
@@ -183,48 +189,37 @@ export default function Home() {
           </section>
           <section className="exp">
             <h2>experience</h2>
-            <div className="timeline">
-              <div className="timelineBlock">
-                <div className="timeContent">
-                  <p className="timeTitle">Web Developer</p>
-                  <p className="subTitle">Cafe24 Philippines, Inc</p>
-                  <p>
-                    Applies and practices Agile Scrum methologies. Participate
-                    to a daily scrum ceremonies and a team discussion. Develop
-                    back-end services with Cafe24&apos;s APIs and integrate into
-                    front-end. Produce an output for e-commerce features.
-                  </p>
-                </div>
-                <Briefcase className="timeContent timeIcon" />
-                <p className="timeContent">December 2020 - June 2023</p>
-              </div>
-              <div className="timelineBlock">
-                <p className="timeContent">July 2019 - December 2020</p>
-                <Briefcase className="timeContent timeIcon" />
-                <div className="timeContent">
-                  <p className="timeTitle">Junior Web Developer</p>
-                  <p className="subTitle">Cafe24 Philippines, Inc</p>
-                  <p>
-                    Convert all wireframes into reusable components for the web
-                    pages. Documentation of technology exploration and outputs.
-                    Participates to scrum meetings and team collaborations.
-                  </p>
-                </div>
-              </div>
-              <div className="timelineBlock">
-                <div className="timeContent">
-                  <p className="timeTitle">Probationary</p>
-                  <p className="subTitle">Cafe24 Philippines, Inc</p>
-                  <p>
-                    Familiarized with companies&apos; IT methologies and
-                    technologies. Develop a probationary projects using a 3rd
-                    party APIs like GitLab, Jira, and Cafe24&apos;s API.
-                  </p>
-                </div>
-                <Briefcase className="timeContent timeIcon" />
-                <p className="timeContent">Feb - July 2019</p>
-              </div>
-            </div>
+            <Chrono
+              items={[
+                {
+                  id: '0',
+                  title: 'Feb - July 2019',
+                  cardTitle: 'WEB DEVELOPER',
+                  cardSubtitle: 'Cafe24 Philippines, Inc',
+                  cardDetailedText:
+                    'Applies and practices Agile Scrum methologies. Participate to a daily scrum ceremonies and a team discussion. Develop back-end services with Cafe24&apos;s APIs and integrate into front-end. Produce an output for e-commerce features.'
+                },
+                {
+                  id: '0',
+                  title: 'July 2019 - December 2020',
+                  cardTitle: 'JUNIOR WEB DEVELOPER',
+                  cardSubtitle: 'Cafe24 Philippines, Inc',
+                  cardDetailedText:
+                    'Convert all wireframes into reusable components for the web pages. Documentation of technology exploration and outputs. Participates to scrum meetings and team collaborations.'
+                },
+                {
+                  id: '0',
+                  title: 'Feb - July 2019',
+                  cardTitle: 'PROBATIONARY',
+                  cardSubtitle: 'Cafe24 Philippines, Inc',
+                  cardDetailedText:
+                    "Familiarized with companies' IT methologies and technologies. Develop a probationary projects using a 3rd party APIs like GitLab, Jira, and Cafe24's API."
+                }
+              ]}
+              mode="VERTICAL_ALTERNATING"
+              disableNavOnKey
+              noUniqueId
+            />
           </section>
         </IconContext.Provider>
         <section className="resume">
