@@ -64,7 +64,7 @@ export default function Home() {
           </div>
           <Image
             className="heroImg"
-            src="/assets/img/no-bg-hero.png"
+            src="/ran-cv/assets/img/no-bg-hero.png"
             width={1000}
             height={700}
             alt="programming work from home"
@@ -74,7 +74,7 @@ export default function Home() {
         <section className="info">
           <div className="profilePicture">
             <Image
-              src="/assets/img/profile-dp.jpg"
+              src="/ran-cv/assets/img/profile-dp.jpg"
               width="300"
               height="450"
               alt="Profile Picture"
