@@ -2,7 +2,6 @@
 
 import 'react-vertical-timeline-component/style.min.css'
 import Image from 'next/image'
-import Link from 'next/link'
 import {
   IconContext,
   UsersThree,
@@ -18,6 +17,7 @@ import {
 import { useMemo } from 'react'
 import Cafe24 from '@/components/svg/Cafe24'
 import dynamic from 'next/dynamic'
+import Header from '@/components/Header/Header'
 
 export default function Home() {
   const configIcons = useMemo(
@@ -36,26 +36,7 @@ export default function Home() {
   })
   return (
     <>
-      <header className="mainHeader">
-        <p className="logo">Rannie</p>
-        <nav className="navWrapper">
-          <Link className="navLink" href="#">
-            About
-          </Link>
-          <Link className="navLink" href="#">
-            Passion
-          </Link>
-          <Link className="navLink" href="#">
-            Experience
-          </Link>
-          <Link className="navLink" href="#">
-            Work
-          </Link>
-          <Link className="navLink" href="#">
-            Contact
-          </Link>
-        </nav>
-      </header>
+      <Header />
       <main className="container">
         <section className="heroBanner">
           <div className="heroGreet">
@@ -71,24 +52,26 @@ export default function Home() {
           />
         </section>
 
-        <section className="info">
-          <div className="profilePicture">
+        <section id="info" className="info">
+          <div className="profileWrap">
             <Image
               src="/ran-cv/assets/img/profile-dp.jpg"
               width="300"
               height="450"
               alt="Profile Picture"
+              className="profileImg"
             />
           </div>
           <div className="aboutMe">
             <p>
-              Hello, nice to meet you!, my name is Rannie and I&apos;m a web
-              developer with good knowledge in Front-end and Back-end
-              developement. My passion lies in web development, and I&apos;m
-              enthusiastic about delving into new and innovative technologies in
-              the field. My 4 years journey as a developer, I&apos;ve been
-              exposed to talented teams and best IT methologies which delivers
-              best e-commerce experience to the users.
+              <span className="intro">Hello</span> nice to meet you!, my name is
+              Rannie and I&apos;m a web developer with good knowledge in
+              Front-end and Back-end developement. My passion lies in web
+              development, and I&apos;m enthusiastic about delving into new and
+              innovative technologies in the field. My 4 years journey as a
+              developer, I&apos;ve been exposed to talented teams and best IT
+              methologies which delivers best e-commerce experience to the
+              users.
             </p>
             <p>
               I enjoy engaging in games while enjoying my preferred iced coffee
@@ -98,7 +81,7 @@ export default function Home() {
         </section>
         {/* what I do */}
         <IconContext.Provider value={configIcons}>
-          <section className="todo">
+          <section id="todo" className="todo">
             <h2>What I do?</h2>
 
             <div className="todoContainer">
@@ -106,33 +89,33 @@ export default function Home() {
                 <Lightbulb className="todoIcon" />
                 <h3>Learn</h3>
                 <p>
-                  Continuos Learning is the one of best way to improve myself.
-                  I&apos;m really love studying new
+                  Continuous learning is the one of best way to improve myself.
+                  I&apos;m love studying new web technologies so that I can keep
+                  up with the latest trend development.
                 </p>
               </div>
               <div className="todoCard">
                 <Code className="todoIcon" />
                 <h3>Developement</h3>
                 <p>
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Et ea
-                  possimus earum consequatur optio, quam deleniti eos, iste
-                  adipisci itaque nobis fugit. Delectus iusto ipsum nulla
-                  possimus accusamus maiores aut!
+                  I have experience with front and back end development, like
+                  develop and integration of API. Documentation of technical
+                  logs. I&apos;ve exposed on IT methologies like Agile.
                 </p>
               </div>
               <div className="todoCard">
                 <UsersThree className="todoIcon" />
                 <h3>Engagement</h3>
                 <p>
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Et ea
-                  possimus earum consequatur optio, quam deleniti eos, iste
-                  adipisci itaque nobis fugit. Delectus iusto ipsum nulla
-                  possimus accusamus maiores aut!
+                  Collabarate with other productive teams like designer teams,
+                  back-end services team, and higher position like Project
+                  Manager, Team Leader etc. to deliver products to the most
+                  efficient way.
                 </p>
               </div>
             </div>
           </section>
-          <section className="skills">
+          <section id="skills" className="skills">
             <h2>Skills</h2>
             <p>
               I&apos;ve been exposed to these awesome web technologies and
@@ -183,11 +166,19 @@ export default function Home() {
               </div>
               <div className="wrap">
                 <h3>happy to share where I&apos;ve worked:</h3>
-                <Cafe24 className="cafe24Logo" />
+                <a
+                  href="https://global.cafe24.com/"
+                  target="_blank"
+                  rel="noreferrer"
+                  aria-label="cafe24 profile"
+                  className="linkCompany"
+                >
+                  <Cafe24 className="cafe24Logo" />
+                </a>
               </div>
             </div>
           </section>
-          <section className="exp">
+          <section id="exp" className="exp">
             <h2>experience</h2>
             <Chrono
               items={[
@@ -197,7 +188,7 @@ export default function Home() {
                   cardTitle: 'WEB DEVELOPER',
                   cardSubtitle: 'Cafe24 Philippines, Inc',
                   cardDetailedText:
-                    'Applies and practices Agile Scrum methologies. Participate to a daily scrum ceremonies and a team discussion. Develop back-end services with Cafe24&apos;s APIs and integrate into front-end. Produce an output for e-commerce features.'
+                    "Applies and practices Agile Scrum methologies. Participate to a daily scrum ceremonies and a team discussion. Develop back-end services with Cafe24's APIs and integrate into front-end. Produce an output for e-commerce features."
                 },
                 {
                   id: '0',
@@ -219,107 +210,165 @@ export default function Home() {
               mode="VERTICAL_ALTERNATING"
               disableNavOnKey
               noUniqueId
+              slideItemDuration={5000}
+              slideShow
             />
           </section>
+
+          <section className="project">
+            <h2>Projects</h2>
+            <div className="projectWrap">
+              <div className="projectContent">
+                <a
+                  href="https://support.cafe24.com/hc/ko/articles/16925784462361?fbclid=IwAR0Dp7fArR-R4w0zYludyT5iCwvZBUdL_lStIjialX3SeurbuyxAQgSwLM"
+                  target="_blank"
+                  rel="noreferrer"
+                  aria-label="linkedin"
+                  className="projectlink"
+                >
+                  Marketing Solution Platform MSP
+                </a>
+                <p>
+                  Provides e-commerce service such as product and advertisement
+                  management. All-in one account for easy ads management.
+                  Provides e-commerce service such as product and advertisement
+                  management. All-in one account for easy ads management.
+                </p>
+                <ul className="tech-list">
+                  <li>TypeScript</li>
+                  <li>JavaScript</li>
+                  <li>Next.js</li>
+                  <li>CSS</li>
+                  <li>useSWR</li>
+                </ul>
+              </div>
+              <div className="projectContent">
+                <a
+                  href="https://cmc.cafe24.com/"
+                  target="_blank"
+                  rel="noreferrer"
+                  aria-label="iss"
+                  className="projectlink"
+                >
+                  Integrated Support System (ISS)
+                </a>
+                <p>
+                  Provides service for information about search correlation of
+                  the products. Integration of Cafe24 API with Naver. Provides
+                  service for information about search correlation of the
+                  products. Integration of Cafe24 API with Naver.
+                </p>
+                <ul className="tech-list">
+                  <li>Django Rest Framework</li>
+                  <li>JavaScript</li>
+                  <li>Nuxt.js</li>
+                  <li>Boostrap Component</li>
+                  <li>Vuex</li>
+                </ul>
+              </div>
+              <div className="projectContent">
+                <a
+                  href="https://cmc.cafe24.com/"
+                  target="_blank"
+                  rel="noreferrer"
+                  aria-label="iss"
+                  className="projectlink"
+                >
+                  Cafe24 Marketing Center
+                </a>
+                <p>
+                  Provide service for Global Marketing Solution like product
+                  analysis, advertise using available feature platforms,
+                  real-time advertising progress status, and progress and
+                  performance monitoring system
+                </p>
+                <ul className="tech-list">
+                  <li>Nuxt.js</li>
+                  <li>JavaScript</li>
+                </ul>
+              </div>
+              <div className="projectContent">
+                <h4>
+                  Automated Project Preparation
+                  <span className="unavailable">unavailable</span>
+                </h4>
+                <p>
+                  Provides a service for easy project management setup such as
+                  automatic JIRA ticket and Gitlab Repository creation through
+                  using JIRA&apos;s APIs and GitLab&apos;s APIs.
+                </p>
+                <ul className="tech-list">
+                  <li>GitLab API</li>
+                  <li>Jira API</li>
+                  <li>Laravel</li>
+                  <li>jQuery</li>
+                  <li>CSS</li>
+                  <li>HTML</li>
+                  <li>Redis</li>
+                  <li>MySql</li>
+                </ul>
+              </div>
+            </div>
+          </section>
+          <section id="contact" className="getInTouch">
+            <h2>Get In Touch</h2>
+            <p>
+              I&apos;m currently looking for any new opportunity, my inbox is
+              always open for any related emails, I&apos;m looking forward to
+              learn more!!
+            </p>
+            <a
+              href="mailto:ranniemraymundo@gmail.com"
+              target="_blank"
+              rel="noreferrer"
+              className="btn btnAnchor"
+            >
+              Let&apos;s Talk ☺️
+            </a>
+          </section>
         </IconContext.Provider>
-        <section className="resume">
-          <h3>View my full resume</h3>
-          <button type="button">Download</button>
-        </section>
-        <section className="project">
-          <h2>Projects</h2>
-          <div className="projectWrap">
-            <div className="projectContent">
-              <h4>Marketing Solution Platform MSP</h4>
-              <p>
-                Provides e-commerce service such as product and advertisement
-                management. All-in one account for easy ads management. Provides
-                e-commerce service such as product and advertisement management.
-                All-in one account for easy ads management.
-              </p>
-              <ul className="tech-list">
-                <li>TypeScript</li>
-                <li>JavaScript</li>
-                <li>Next.js</li>
-                <li>CSS</li>
-                <li>useSWR</li>
-              </ul>
-            </div>
-            <div className="projectContent">
-              <h4>Integrated Support System (ISS) </h4>
-              <p>
-                Provides service for information about search correlation of the
-                products. Integration of Cafe24 API with Naver. Provides service
-                for information about search correlation of the products.
-                Integration of Cafe24 API with Naver.
-              </p>
-              <ul className="tech-list">
-                <li>Django Rest Framework</li>
-                <li>JavaScript</li>
-                <li>Nuxt.js</li>
-                <li>Boostrap Component</li>
-                <li>Vuex</li>
-              </ul>
-            </div>
-            <div className="projectContent">
-              <h4>Cafe24 Marketing Center</h4>
-              <p>
-                Provide service for Global Marketing Solution like product
-                analysis, advertise using available feature platforms, real-time
-                advertising progress status, and progress and performance
-                monitoring system
-              </p>
-              <ul className="tech-list">
-                <li>Nuxt.js</li>
-                <li>JavaScript</li>
-              </ul>
-            </div>
-            <div className="projectContent">
-              <h4>Automated Project Preparation</h4>
-              <p>
-                Provides a service for easy project management setup such as
-                automatic JIRA ticket and Gitlab Repository creation through
-                using JIRA&apos;s APIs and GitLab&apos;s APIs.
-              </p>
-              <ul className="tech-list">
-                <li>GitLab API</li>
-                <li>Jira API</li>
-                <li>Laravel</li>
-                <li>jQuery</li>
-                <li>CSS</li>
-                <li>HTML</li>
-                <li>Redis</li>
-                <li>MySql</li>
-              </ul>
-            </div>
-          </div>
-        </section>
-        <section className="getInTouch">
-          <h3>Get In Touch</h3>
-          <p>
-            I&apos;m currently looking for any new opportunity, my inbox is
-            always open for any related emails, I&apos;m looking forward to
-            learn more!!
-          </p>
-          <a
-            href="mailto:ranniemraymundo@gmail.com"
-            target="_blank"
-            rel="noreferrer"
-            className="btnAnchor"
-          >
-            Let&apos;s Talk ☺️
-          </a>
-        </section>
       </main>
       <footer>
-        <p>Designed & Develop by</p>
-        <p> Rannie Raymundo 2023</p>
+        <div>
+          <p>Designed & Develop by</p>
+          <p> Rannie Raymundo &copy;2023</p>
+        </div>
+        <div>
+          Coded in
+          <a
+            href="http://https://code.visualstudio.com/"
+            target="_blank"
+            rel="noreferrer"
+            className="footeLink"
+          >
+            Visual Studio Code
+          </a>
+          by yours truly. Built with
+          <a
+            href="https://nextjs.org/docs"
+            target="_blank"
+            rel="noreferrer"
+            className="footeLink"
+          >
+            Next.js
+          </a>
+          , deployed with
+          <a
+            href="https://docs.github.com/en/pages/getting-started-with-github-pages/creating-a-github-pages-site"
+            target="_blank"
+            rel="noreferrer"
+            className="footeLink"
+          >
+            GitHub Pages
+          </a>
+          . All text is set in the Inter typeface.
+        </div>
       </footer>
       <IconContext.Provider value={configIcons}>
         <aside className="socialLinks">
           <a
             id="linkedin"
-            href="http://google.com"
+            href="https://www.linkedin.com/in/ranniem/"
             target="_blank"
             rel="noreferrer"
             aria-label="linkedin"
@@ -328,7 +377,7 @@ export default function Home() {
           </a>
           <a
             id="github"
-            href="http://google.com"
+            href="https://github.com/rranyz"
             target="_blank"
             rel="noreferrer"
             aria-label="github"
@@ -337,7 +386,7 @@ export default function Home() {
           </a>
           <a
             id="gitlab"
-            href="http://google.com"
+            href="https://gitlab.com/rranyz"
             target="_blank"
             rel="noreferrer"
             aria-label="gitlab"
@@ -346,7 +395,7 @@ export default function Home() {
           </a>
 
           <a
-            href="http://google.com"
+            href="https://www.facebook.com/rranyz"
             target="_blank"
             rel="noreferrer"
             aria-label="facebook"
@@ -355,7 +404,7 @@ export default function Home() {
           </a>
           <a
             id="instagram"
-            href="http://google.com"
+            href="https://www.instagram.com/rranyz/"
             target="_blank"
             rel="noreferrer"
             aria-label="instagram"

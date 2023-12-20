@@ -2,9 +2,9 @@ import './globals.css'
 import type { Metadata } from 'next'
 
 // eslint-disable-next-line camelcase
-import { Work_Sans } from 'next/font/google'
+import { Inter } from 'next/font/google'
 
-const workSans = Work_Sans({ subsets: ['latin'] })
+const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
   title: 'Rannie Raymundo | Web Developer',
@@ -18,7 +18,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={workSans.className}>{children}</body>
+      <body className={inter.className}>{children}</body>
     </html>
   )
 }
