@@ -63,10 +63,10 @@ export default function Home() {
             />
           </div>
           <div className="aboutMe">
-            <p>
+            <p className="introWrap">
               <span className="intro">Hello</span> nice to meet you!, my name is
-              Rannie and I&apos;m a web developer with good knowledge in
-              Front-end and Back-end developement. My passion lies in web
+              Rannie and I&apos;m a web developer with the good knowledge in the
+              front-end and back-end developement. My passion lies in web
               development, and I&apos;m enthusiastic about delving into new and
               innovative technologies in the field. My 4 years journey as a
               developer, I&apos;ve been exposed to talented teams and best IT
@@ -210,8 +210,6 @@ export default function Home() {
               mode="VERTICAL_ALTERNATING"
               disableNavOnKey
               noUniqueId
-              slideItemDuration={5000}
-              slideShow
             />
           </section>
 
