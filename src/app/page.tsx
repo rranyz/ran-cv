@@ -41,7 +41,10 @@ export default function Home() {
         <section className="heroBanner">
           <div className="heroGreet">
             <h1>Hi!, I&apos;m Rannie Raymundo</h1>
-            <p>Web Developer, & Front-End Developer</p>
+            <p>
+              Web Developer | Full-Stack Developer | PHP | Vue.js | React.js |
+              REST APIs | CI/CD
+            </p>
           </div>
           <Image
             className="heroImg"
@@ -183,14 +186,12 @@ export default function Home() {
                       target="_blank"
                       rel="noreferrer"
                       aria-label="Globalnet Solution Logo"
-                      className=""
                     >
                       <Image
-                        src="/assets/img/globalnet_solutions_group_inc_logo.jpg"
+                        src="/ran-cv/assets/img/globalnet_solutions_group_inc_logo.jpg"
                         width="200"
                         height="200"
-                        alt="Profile Picture"
-                        className="profileImg"
+                        alt="Globalnet Logo"
                       />
                     </a>
                   </div>
