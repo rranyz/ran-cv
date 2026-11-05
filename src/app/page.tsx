@@ -246,10 +246,10 @@ export default function Home() {
             <div className="projectWrap">
               <div className="projectContent">
                 <a
-                  href="https://support.cafe24.com/hc/ko/articles/16925784462361?fbclid=IwAR0Dp7fArR-R4w0zYludyT5iCwvZBUdL_lStIjialX3SeurbuyxAQgSwLM"
+                  href="https://manage.dwgameplay.com/login.php"
                   target="_blank"
                   rel="noreferrer"
-                  aria-label="linkedin"
+                  aria-label="Casino Admin Page"
                   className="projectlink"
                 >
                   Casino Back Office Management Platform – Game Center
