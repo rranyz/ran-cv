@@ -241,6 +241,13 @@ h1 {
   margin-left: 111px;
 }
 
+.companyLogo {
+  display: flex;
+  align-items: center;
+  gap: 50px;
+  margin: 10px;
+}
+
 /** experience */
 .cardDesc p {
   font-size: 16px !important;

@@ -55,9 +55,9 @@ export default function Home() {
         <section id="info" className="info">
           <div className="profileWrap">
             <Image
-              src="/ran-cv/assets/img/profile-dp.jpg"
-              width="300"
-              height="450"
+              src="/ran-cv/assets/img/profile-dev.jpg"
+              width="420"
+              height="430"
               alt="Profile Picture"
               className="profileImg"
             />
@@ -68,10 +68,9 @@ export default function Home() {
               Rannie and I&apos;m a web developer with the good knowledge in the
               front-end and back-end developement. My passion lies in web
               development, and I&apos;m enthusiastic about delving into new and
-              innovative technologies in the field. My 4 years journey as a
-              developer, I&apos;ve been exposed to talented teams and best IT
-              methologies which delivers best e-commerce experience to the
-              users.
+              innovative technologies in the field. My journey as a developer,
+              I&apos;ve been exposed to talented teams and best IT methologies
+              which delivers best web/software experience to the users.
             </p>
             <p>
               I enjoy engaging in games while enjoying my preferred iced coffee
@@ -144,6 +143,7 @@ export default function Home() {
                       <li>Nuxt.js</li>
                       <li>Node</li>
                       <li>Bootstrap</li>
+                      <li>Slim 4</li>
                       <li>Laravel</li>
                       <li>Django Rest Framework</li>
                       <li>Tailwind</li>
@@ -158,23 +158,43 @@ export default function Home() {
                       <li>Linux - Ubuntu</li>
                       <li>Docker</li>
                       <li>MongoDB</li>
-                      <li>XAMPP</li>
+                      <li>Nginx</li>
                       <li>Jira</li>
                     </ul>
                   </div>
                 </div>
               </div>
               <div className="wrap">
-                <h3>happy to share where I&apos;ve worked:</h3>
-                <a
-                  href="https://global.cafe24.com/"
-                  target="_blank"
-                  rel="noreferrer"
-                  aria-label="cafe24 profile"
-                  className="linkCompany"
-                >
-                  <Cafe24 className="cafe24Logo" />
-                </a>
+                <h3>Happy to share where I&apos;ve worked:</h3>
+                <div className="companyLogo">
+                  <div>
+                    <a
+                      href="https://global.cafe24.com/"
+                      target="_blank"
+                      rel="noreferrer"
+                      aria-label="cafe24 profile"
+                    >
+                      <Cafe24 className="cafe24Logo" />
+                    </a>
+                  </div>
+                  <div>
+                    <a
+                      href="https://www.linkedin.com/company/globalnet-solutions-group-inc"
+                      target="_blank"
+                      rel="noreferrer"
+                      aria-label="Globalnet Solution Logo"
+                      className=""
+                    >
+                      <Image
+                        src="/assets/img/globalnet_solutions_group_inc_logo.jpg"
+                        width="200"
+                        height="200"
+                        alt="Profile Picture"
+                        className="profileImg"
+                      />
+                    </a>
+                  </div>
+                </div>
               </div>
             </div>
           </section>
@@ -182,6 +202,14 @@ export default function Home() {
             <h2>experience</h2>
             <Chrono
               items={[
+                {
+                  id: '0',
+                  title: 'March 2024 - present',
+                  cardTitle: 'WEB DEVELOPER',
+                  cardSubtitle: 'Globalnet Solutions Group Inc',
+                  cardDetailedText:
+                    'I develop RESTful APIs using Slim Framework and integrate them with Vue.js applications. I build reusable frontend components using Vue 3 and modernize legacy systems using PHP 8.4. I optimize SQL queries and database operations for reporting and transactions. I develop and maintain back-office features, including revenue reports, game statistics, player management, and transaction management. I handle authentication, access control, and application deployments in Linux/Nginx environments. I also collaborate with developers, QA, and PMs in planning, development, testing, and production releases.'
+                },
                 {
                   id: '0',
                   title: 'Feb - July 2019',
@@ -216,6 +244,31 @@ export default function Home() {
           <section className="project">
             <h2>Projects</h2>
             <div className="projectWrap">
+              <div className="projectContent">
+                <a
+                  href="https://support.cafe24.com/hc/ko/articles/16925784462361?fbclid=IwAR0Dp7fArR-R4w0zYludyT5iCwvZBUdL_lStIjialX3SeurbuyxAQgSwLM"
+                  target="_blank"
+                  rel="noreferrer"
+                  aria-label="linkedin"
+                  className="projectlink"
+                >
+                  Casino Back Office Management Platform – Game Center
+                </a>
+                <p>
+                  Developed a centralized back-office management platform for
+                  casino operations, providing reporting, data monitoring, and
+                  administrative management tools. The system helps manage
+                  operational activities, track performance, and control user
+                  access through JWT authentication and role-based access
+                  control.
+                </p>
+                <ul className="tech-list">
+                  <li>TypeScript</li>
+                  <li>PHP 8 Slim Framework</li>
+                  <li>Vue3 Vite</li>
+                  <li>Tailwind</li>
+                </ul>
+              </div>
               <div className="projectContent">
                 <a
                   href="https://support.cafe24.com/hc/ko/articles/16925784462361?fbclid=IwAR0Dp7fArR-R4w0zYludyT5iCwvZBUdL_lStIjialX3SeurbuyxAQgSwLM"
